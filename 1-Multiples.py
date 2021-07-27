@@ -1,5 +1,3 @@
-from utils import *
-
 """
 Find the sum of all the multiples of m or n below N.
 """
