@@ -19,3 +19,15 @@ def lcm(L):
 def combinations(L, x):
     # returns a list of all sets of x elements in a given list. Eg: L = [1, 2, 3] and x = 2, will return [(1, 2), (1, 3), (2, 3)]
     return itertools.combinations(L, x)
+
+
+def isPrime(n):
+    # returns True if n is prime, False otherwise. Any number < 2 is non-prime.
+    if n % 2 and n != 2:
+        i = 3
+        while i <= n ** 0.5:
+            if n % i == 0:
+                return False
+            i += 2
+        return True
+    return False
