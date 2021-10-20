@@ -31,3 +31,21 @@ def isPrime(n):
             i += 2
         return True
     return False
+
+
+def primesTillN(n):
+    # let A be an array of Boolean values, indexed by integers 2 to n, initially all set to true.
+    A = {_: True for _ in range(2, n + 1)}
+    # for i = 2, 3, 4, ..., not exceeding √n do
+    for i in range(2, int(n ** 0.5) + 1):
+        # if A[i] is true
+        if A[i]:
+            # for j = ii, ii+i, ii+2i, ii+3i, ..., not exceeding n do
+            #   A[j] := false
+            __ = 0
+            j = (i ** 2) + (__ * i)
+            while j <= n:
+                A[j] = False
+                __ += 1
+                j = (i ** 2) + (__ * i)
+    return [ind for ind, b in A.items() if b]
